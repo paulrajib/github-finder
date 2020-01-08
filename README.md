@@ -7,6 +7,8 @@ Using
 
 ### `npm start`
 
+Or
+
 ### `yarn start`
 
 Runs the app in the development mode.<br />

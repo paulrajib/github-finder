@@ -9,7 +9,7 @@ class App extends Component {
     // const showName = true;
     return (
       <div className='App'>
-        <Navbar />
+        <Navbar title='Github Finder' />
       </div>
     );
   }
