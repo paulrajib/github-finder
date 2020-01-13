@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Navbar from "./components/layout/Navbar";
 import Users from "./components/users/Users";
+import Search from "./components/users/Search";
 import axios from "axios";
 import "./App.css";
 
@@ -15,7 +16,8 @@ class App extends Component {
     //   .get("https://api.github.com/users")
     //   .then(res => console.log(res.data));
 
-    console.log(process.env.REACT_APP_GITHUB_CLIENT_SECRET);
+    // console.log(process.env.REACT_APP_GITHUB_CLIENT_SECRET);
+
     this.setState({ loading: true });
 
     const res = await axios.get(
@@ -33,6 +35,7 @@ class App extends Component {
       <div className='App'>
         <Navbar title='Github Finder' />
         <div className='container'>
+          <Search />
           <Users loading={this.state.loading} users={this.state.users} />
         </div>
       </div>
