@@ -1,8 +1,15 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 
 class Search extends Component {
   state = {
     text: ""
+  };
+
+  static propTypes = {
+    searchUsers: PropTypes.func.isRequired,
+    clearhUsers: PropTypes.func.isRequired,
+    showClear: PropTypes.bool.isRequired
   };
 
   onChange = e => {
@@ -12,9 +19,10 @@ class Search extends Component {
     e.preventDefault();
     // console.log(this.state.text);
     this.props.searchUsers(this.state.text);
-    this.setState({ text: ''});
+    this.setState({ text: "" });
   };
   render() {
+    const { showClear, clearhUsers } = this.props;
     return (
       <div>
         <form action='' onSubmit={this.onSubmit} className='form'>
@@ -31,6 +39,11 @@ class Search extends Component {
             className='btn btn-dark btn-block'
           />
         </form>
+        {showClear && (
+          <button className='btn btn-light btn-block' onClick={clearhUsers}>
+            Clear
+          </button>
+        )}
       </div>
     );
   }
