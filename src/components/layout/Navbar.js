@@ -13,7 +13,10 @@ const Navbar = ({ title }) => {
     <div className='navbar bg-primary'>
       {/* <h1>{element} NavBar</h1> */}
       <h1>
-        <FontAwesomeIcon icon={faGithub} /> {title}
+        <i className='fa fa-github'></i>
+        {/* <FontAwesomeIcon icon={faGithub} />  */}
+        <span> </span>
+        {title}
       </h1>
     </div>
   );
